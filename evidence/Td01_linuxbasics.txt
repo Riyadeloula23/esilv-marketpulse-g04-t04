@@ -1,0 +1,180 @@
+
+
+@Jaafar1234-LM10 ➜ /workspaces/esilv-marketpulse-g04-t04 (Jaafar_Chagaf) $ cat data/sample/instruments.json
+{
+  "instrument": {
+    "ticker": "AAPL",
+    "name": "Apple Inc.",
+    "currency": "USD",
+    "market": "NASDAQ"
+  },
+  "benchmark": {
+    "ticker": "SP500",
+    "name": "S&P 500",
+    "currency": "USD",
+    "market": "US"
+  }
+}
+@Jaafar1234-LM10 ➜ /workspaces/esilv-marketpulse-g04-t04 (Jaafar_Chagaf) $ cat data/sample/instruments.json
+{
+  "instrument": {
+    "ticker": "AAPL",
+    "name": "Apple Inc.",
+    "currency": "USD",
+    "market": "NASDAQ"
+  },
+  "benchmark": {
+    "ticker": "SP500",
+    "name": "S&P 500",
+    "currency": "USD",
+    "market": "US"
+  }
+}
+@Jaafar1234-LM10 ➜ /workspaces/esilv-marketpulse-g04-t04 (Jaafar_Chagaf) $ head -n 3 data/sample/prices.csv
+date,ticker,open,high,low,close,volume
+2026-09-01,AAPL,249.20,251.50,248.00,250.00,38000000
+2026-09-01,SP500,6592.00,6615.00,6580.00,6600.00,0
+@Jaafar1234-LM10 ➜ /workspaces/esilv-marketpulse-g04-t04 (Jaafar_Chagaf) $ greep AAPL data/sample/prices.csv 
+bash: greep: command not found
+@Jaafar1234-LM10 ➜ /workspaces/esilv-marketpulse-g04-t04 (Jaafar_Chagaf) $ grep AAPL data/sample/prices.csv
+2026-09-01,AAPL,249.20,251.50,248.00,250.00,38000000
+2026-09-02,AAPL,250.80,252.80,249.60,251.30,39500000
+2026-09-03,AAPL,249.60,251.30,248.40,249.80,41000000
+2026-09-04,AAPL,251.30,253.60,250.10,252.10,42500000
+2026-09-08,AAPL,251.90,253.90,250.70,252.40,44000000
+2026-09-09,AAPL,254.00,255.70,252.80,254.20,38000000
+2026-09-10,AAPL,254.30,256.60,253.10,255.10,39500000
+2026-09-11,AAPL,254.20,256.20,253.00,254.70,41000000
+2026-09-14,AAPL,256.60,258.30,255.40,256.80,42500000
+2026-09-15,AAPL,257.20,259.50,256.00,258.00,44000000
+2026-09-16,AAPL,256.70,258.70,255.50,257.20,38000000
+2026-09-17,AAPL,259.20,260.90,258.00,259.40,39500000
+2026-09-18,AAPL,259.30,261.60,258.10,260.10,41000000
+2026-09-21,AAPL,259.10,261.10,257.90,259.60,42500000
+2026-09-22,AAPL,261.10,262.80,259.90,261.30,44000000
+2026-09-23,AAPL,261.20,263.50,260.00,262.00,38000000
+2026-09-24,AAPL,263.00,265.00,261.80,263.50,39500000
+2026-09-25,AAPL,262.60,264.30,261.40,262.80,41000000
+2026-09-28,AAPL,263.30,265.60,262.10,264.10,42500000
+2026-09-29,AAPL,264.50,266.50,263.30,265.00,44000000
+2026-09-30,AAPL,266.00,267.70,264.80,266.20,38000000
+@Jaafar1234-LM10 ➜ /workspaces/esilv-marketpulse-g04-t04 (Jaafar_Chagaf) $
+@Jaafar1234-LM10 ➜ /workspaces/esilv-marketpulse-g04-t04 (Jaafar_Chagaf) $ grep "AAPL" data/sample/prices.csv | head -n 3
+2026-09-01,AAPL,249.20,251.50,248.00,250.00,38000000
+2026-09-02,AAPL,250.80,252.80,249.60,251.30,39500000
+2026-09-03,AAPL,249.60,251.30,248.40,249.80,41000000
+@Jaafar1234-LM10 ➜ /workspaces/esilv-marketpulse-g04-t04 (Jaafar_Chagaf) $ grep -n "AAPL" data/sample/prices.csv | head -n 3
+2:2026-09-01,AAPL,249.20,251.50,248.00,250.00,38000000
+4:2026-09-02,AAPL,250.80,252.80,249.60,251.30,39500000
+6:2026-09-03,AAPL,249.60,251.30,248.40,249.80,41000000
+@Jaafar1234-LM10 ➜ /workspaces/esilv-marketpulse-g04-t04 (Jaafar_Chagaf) $ grep --help
+Usage: grep [OPTION]... PATTERNS [FILE]...
+Search for PATTERNS in each FILE.
+Example: grep -i 'hello world' menu.h main.c
+PATTERNS can contain multiple patterns separated by newlines.
+
+Pattern selection and interpretation:
+  -E, --extended-regexp     PATTERNS are extended regular expressions
+  -F, --fixed-strings       PATTERNS are strings
+  -G, --basic-regexp        PATTERNS are basic regular expressions
+  -P, --perl-regexp         PATTERNS are Perl regular expressions
+  -e, --regexp=PATTERNS     use PATTERNS for matching
+  -f, --file=FILE           take PATTERNS from FILE
+  -i, --ignore-case         ignore case distinctions in patterns and data
+      --no-ignore-case      do not ignore case distinctions (default)
+  -w, --word-regexp         match only whole words
+  -x, --line-regexp         match only whole lines
+  -z, --null-data           a data line ends in 0 byte, not newline
+
+Miscellaneous:
+  -s, --no-messages         suppress error messages
+  -v, --invert-match        select non-matching lines
+  -V, --version             display version information and exit
+      --help                display this help text and exit
+
+Output control:
+  -m, --max-count=NUM       stop after NUM selected lines
+  -b, --byte-offset         print the byte offset with output lines
+  -n, --line-number         print line number with output lines
+      --line-buffered       flush output on every line
+  -H, --with-filename       print file name with output lines
+  -h, --no-filename         suppress the file name prefix on output
+      --label=LABEL         use LABEL as the standard input file name prefix
+  -o, --only-matching       show only nonempty parts of lines that match
+  -q, --quiet, --silent     suppress all normal output
+      --binary-files=TYPE   assume that binary files are TYPE;
+                            TYPE is 'binary', 'text', or 'without-match'
+  -a, --text                equivalent to --binary-files=text
+  -I                        equivalent to --binary-files=without-match
+  -d, --directories=ACTION  how to handle directories;
+                            ACTION is 'read', 'recurse', or 'skip'
+  -D, --devices=ACTION      how to handle devices, FIFOs and sockets;
+                            ACTION is 'read' or 'skip'
+  -r, --recursive           like --directories=recurse
+  -R, --dereference-recursive  likewise, but follow all symlinks
+      --include=GLOB        search only files that match GLOB (a file pattern)
+      --exclude=GLOB        skip files that match GLOB
+      --exclude-from=FILE   skip files that match any file pattern from FILE
+      --exclude-dir=GLOB    skip directories that match GLOB
+  -L, --files-without-match  print only names of FILEs with no selected lines
+  -l, --files-with-matches  print only names of FILEs with selected lines
+  -c, --count               print only a count of selected lines per FILE
+  -T, --initial-tab         make tabs line up (if needed)
+  -Z, --null                print 0 byte after FILE name
+
+Context control:
+  -B, --before-context=NUM  print NUM lines of leading context
+  -A, --after-context=NUM   print NUM lines of trailing context
+  -C, --context=NUM         print NUM lines of output context
+  -NUM                      same as --context=NUM
+      --group-separator=SEP  print SEP on line between matches with context
+      --no-group-separator  do not print separator for matches with context
+      --color[=WHEN],
+      --colour[=WHEN]       use markers to highlight the matching strings;
+                            WHEN is 'always', 'never', or 'auto'
+  -U, --binary              do not strip CR characters at EOL (MSDOS/Windows)
+
+When FILE is '-', read standard input.  With no FILE, read '.' if
+recursive, '-' otherwise.  With fewer than two FILEs, assume -h.
+Exit status is 0 if any line is selected, 1 otherwise;
+if any error occurs and -q is not given, the exit status is 2.
+
+Report bugs to: bug-grep@gnu.org
+GNU grep home page: <https://www.gnu.org/software/grep/>
+General help using GNU software: <https://www.gnu.org/gethelp/>
+@Jaafar1234-LM10 ➜ /workspaces/esilv-marketpulse-g04-t04 (Jaafar_Chagaf) $ grep --help | grep -E -- '--line-number|--max-count'
+  -m, --max-count=NUM       stop after NUM selected lines
+  -n, --line-number         print line number with output lines
+@Jaafar1234-LM10 ➜ /workspaces/esilv-marketpulse-g04-t04 (Jaafar_Chagaf) $ man grep
+@Jaafar1234-LM10 ➜ /workspaces/esilv-marketpulse-g04-t04 (Jaafar_Chagaf) $ mkdir -p evidence
+
+{
+  echo "=== HELP EXCERPT ==="
+  grep --help | grep -E -- '--line-number|--max-count'
+
+  echo ""
+  echo "=== COMMAND ==="
+  echo 'grep -n "AAPL" data/sample/prices.csv | head -n 3'
+
+} > evidence/documentation_challenge.txthree matching lines." numbers."
+@Jaafar1234-LM10 ➜ /workspaces/esilv-marketpulse-g04-t04 (Jaafar_Chagaf) $ cat evidence/documentation_challenge.txt
+=== HELP EXCERPT ===
+  -m, --max-count=NUM       stop after NUM selected lines
+  -n, --line-number         print line number with output lines
+
+=== COMMAND ===
+grep -n "AAPL" data/sample/prices.csv | head -n 3
+
+=== OUTPUT ===
+2:2026-09-01,AAPL,249.20,251.50,248.00,250.00,38000000
+4:2026-09-02,AAPL,250.80,252.80,249.60,251.30,39500000
+6:2026-09-03,AAPL,249.60,251.30,248.40,249.80,41000000
+
+=== EXPLANATION ===
+grep -n finds AAPL and displays the original CSV line numbers.
+head -n 3 keeps only the first three matching lines.
+@Jaafar1234-LM10 ➜ /workspaces/esilv-marketpulse-g04-t04 (Jaafar_Chagaf) $ pwd
+/workspaces/esilv-marketpulse-g04-t04
+@Jaafar1234-LM10 ➜ /workspaces/esilv-marketpulse-g04-t04 (Jaafar_Chagaf) $ ls
+CONTRIBUTING.md  Chagaf  README.md  TEAM-g04-txx.md  config  data  docs  evidence  notebooks  requirements.txt  src
+@Jaafar1234-LM10 ➜ /workspaces/esilv-marketpulse-g04-t04 (Jaafar_Chagaf) $ touch evidence/Jaafar_Chagaf/Td01_linuxbasics.txt
